@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="DELETE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description>Test</description>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>true</flexible_conversation_switching>
+        <graph>{"graph_api_version":"1.0.41","variables":{},"goals":{"primary":{"id":"primary","trigger":{"type":"primary"},"name":"primary","applicability":"","description":"","nodes":{"3de8277a91544ae4a048510b52195db3":{"id":"3de8277a91544ae4a048510b52195db3","stepType":"Start","name":"Start","greetingResponse":{"mode":"simple","value":""}},"10bf692da2854cdab7fd1d17f3a306ee":{"id":"10bf692da2854cdab7fd1d17f3a306ee","stepType":"TerminateGoal","name":"End","confirmationMessage":{"mode":"simple","value":""}}},"edges":[{"id":"e7e8b9a6d9e6454790864a00263fbdc7","edgeType":"Edge","source":"3de8277a91544ae4a048510b52195db3","target":"10bf692da2854cdab7fd1d17f3a306ee","sourcePort":"","targetPort":""}]}}}</graph>
+        <key_phrases>Test</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Test</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles/>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-26 17:41:47</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>5303588f97e4e11085b7b4cfe153affb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Test</sys_name>
+        <sys_package display_value="GPT Demo" source="x_snc_gpt_demo">c3bf000f97e4e11085b7b4cfe153afea</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="GPT Demo">c3bf000f97e4e11085b7b4cfe153afea</sys_scope>
+        <sys_update_name>sys_cb_topic_5303588f97e4e11085b7b4cfe153affb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-01-26 17:41:47</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>SMALL_TALK</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="DELETE" query="document_key=5303588f97e4e11085b7b4cfe153affb"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="GPT Demo">c3bf000f97e4e11085b7b4cfe153afea</application>
+        <file_path/>
+        <instance_id>359d66c7dbd55d9c9df22f17d4961970</instance_id>
+        <instance_name>demotechnologywf15452</instance_name>
+        <name>sys_cb_topic_5303588f97e4e11085b7b4cfe153affb</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic"><sys_cb_topic action="INSERT_OR_UPDATE"><applicability/><applicability_mode>query</applicability_mode><autopilot_topic>false</autopilot_topic><category/><channels/><connect_queue/><description>Test</description><expose_on_palette>false</expose_on_palette><flexible_conversation_switching>true</flexible_conversation_switching><graph>{"graph_api_version":"1.0.41","variables":{},"goals":{"primary":{"id":"primary","trigger":{"type":"primary"},"name":"primary","applicability":"","description":"","nodes":{"3de8277a91544ae4a048510b52195db3":{"id":"3de8277a91544ae4a048510b52195db3","stepType":"Start","name":"Start","greetingResponse":{"mode":"simple","value":""}},"10bf692da2854cdab7fd1d17f3a306ee":{"id":"10bf692da2854cdab7fd1d17f3a306ee","stepType":"TerminateGoal","name":"End","confirmationMessage":{"mode":"simple","value":""}}},"edges":[{"id":"e7e8b9a6d9e6454790864a00263fbdc7","edgeType":"Edge","source":"3de8277a91544ae4a048510b52195db3","target":"10bf692da2854cdab7fd1d17f3a306ee","sourcePort":"","targetPort":""}]}}}</graph><key_phrases>Test</key_phrases><library>false</library><live_agent>false</live_agent><name>Test</name><nlu_intent/><nlu_intent_label/><nlu_model/><nlu_model_label/><nlu_provider/><palette_label/><roles/><secure_custom_input_control>false</secure_custom_input_control><source_topic_id/><sys_class_name>sys_cb_topic</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-01-26 17:41:47</sys_created_on><sys_domain>global</sys_domain><sys_id>5303588f97e4e11085b7b4cfe153affb</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Test</sys_name><sys_package display_value="GPT Demo" source="x_snc_gpt_demo">c3bf000f97e4e11085b7b4cfe153afea</sys_package><sys_policy/><sys_scope display_value="GPT Demo">c3bf000f97e4e11085b7b4cfe153afea</sys_scope><sys_update_name>sys_cb_topic_5303588f97e4e11085b7b4cfe153affb</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-01-26 17:41:47</sys_updated_on><triggerable_by_notification>false</triggerable_by_notification><type>SMALL_TALK</type><variables/></sys_cb_topic><sys_variable_value action="delete_multiple" query="document_key=5303588f97e4e11085b7b4cfe153affb"/></record_update>]]></payload>
+        <payload_hash>2092431730</payload_hash>
+        <record_name>Test</record_name>
+        <reverted_from/>
+        <source>43bf000f97e4e11085b7b4cfe153afec</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-26 17:41:48</sys_created_on>
+        <sys_id>2f031c8f97e4e11085b7b4cfe153afe0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>185ef2bdfc90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-01-26 17:41:48</sys_updated_on>
+        <type>Topic</type>
+        <update_guid>67031c8fb3e4e110b172572ab67679e0</update_guid>
+        <update_guid_history>67031c8fb3e4e110b172572ab67679e0:2092431730</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-26 17:42:57</sys_created_on>
+        <sys_db_object display_value="" name="sys_cb_topic">sys_cb_topic</sys_db_object>
+        <sys_id>1b9392b293f84356ad8f64d8fc165349</sys_id>
+        <sys_metadata>5303588f97e4e11085b7b4cfe153affb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Test</sys_name>
+        <sys_package display_value="GPT Demo" source="x_snc_gpt_demo">c3bf000f97e4e11085b7b4cfe153afea</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="GPT Demo">c3bf000f97e4e11085b7b4cfe153afea</sys_scope>
+        <sys_scope_delete display_value="">0b5e177da8f44f608177359efacff100</sys_scope_delete>
+        <sys_update_name>sys_cb_topic_5303588f97e4e11085b7b4cfe153affb</sys_update_name>
+        <sys_update_version display_value="sys_cb_topic_5303588f97e4e11085b7b4cfe153affb">2f031c8f97e4e11085b7b4cfe153afe0</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-01-26 17:42:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

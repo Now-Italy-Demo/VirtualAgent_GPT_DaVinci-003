@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_design_topic">
+    <sys_cb_design_topic action="INSERT_OR_UPDATE">
+        <compiled_topic display_value="_PRVW__ba95780fd068e110735ff84bf280e390">cb95308f9768e11085b7b4cfe153afbe</compiled_topic>
+        <design_definition>{"type":"FlowTopic","type":"FlowTopic","triggers":[{"type":"Trigger","name":"4f0473ff737b4918a11032b2e0bca14b","triggerType":"request","applicability":{"type":"Applicability","type":"Applicability","mode":"script","value":"true"},"id":"4f0473ff737b4918a11032b2e0bca14b"}],"goals":[{"name":"primary","trigger_id":"4f0473ff737b4918a11032b2e0bca14b","nodes":[{"type":"StartGoal","type":"StartGoal","goal_id":"primary","greeting_msg":{"type":"String","type":"String","mode":"string","value":""},"id":"4e0f73b2ef25416e8ecad6bf758a8ffd","name":"Start"},{"type":"TerminateGoal","type":"TerminateGoal","goal_id":"primary","confirmation_msg":{"type":"String","type":"String","mode":"string","value":""},"id":"de94c6bdea574295a2a682d2f612dc3d","name":"End"},{"type":"TextOutputPrompt","type":"TextOutputPrompt","value":[{"type":"String","type":"String","mode":"string","value":"{{vaVars.greeting_message}}"}],"id":"ca3c9ab91cbc4829aa7946ba7668c979","name":"Show Greeting Message","goal_id":"primary","applicability":{"type":"Applicability","type":"Applicability","mode":"script","value":"true"},"secure":false},{"type":"ScriptedAction","type":"ScriptedAction","script":"(function execute() {\n    vaVars.greeting_message = vaSystem.getGreetingMessage();\n})()\n","id":"b3ed86a8ac0247f4a5f3a5dce119fab6","name":"Get Greeting Message","goal_id":"primary","applicability":{"type":"Applicability","type":"Applicability","mode":"script","value":"true"}},{"type":"ScriptedAction","type":"ScriptedAction","script":"(function execute() {\n    var greetingMessage = vaSystem.getTopicSelectionMessage();\n    vaSystem.sendTopicPickerControl(greetingMessage);\n})()\n","id":"0fff718f5956491db458535369ac4df3","name":"Send Topic Picker","goal_id":"primary","applicability":{"type":"Applicability","type":"Applicability","mode":"script","value":"true"}},{"type":"InputPrompt","type":"InputPrompt","variable_id":"7315313469c64ecc97d9f0c012fa7d7c","message":{"type":"String","type":"String","mode":"string","value":"gs.getMessageLang(\"Can you describe your need?\", vaContext.getRequesterLang())"},"nlu_entity_binding":{"type":"NLUEntityBinding","allow_text_input":false,"use_confirmation_prompt":true},"skippable":{"type":"Applicability","type":"Applicability","mode":"script","value":"false"},"id":"6a55e009acff49c79cf88811d42810df","name":"User GPT Prompt","goal_id":"primary","applicability":{"type":"Applicability","type":"Applicability","mode":"script","value":"true"},"formatType":"Text","validationScript":""},{"type":"FDIHInvocation","type":"FDIHInvocation","name":"GPT API Call","kind":"action","mode":"sync","inputs":[{"supported_input_modes":[],"name":"prompt","type":"string","order":0,"required":false,"value":[{"type":"String","type":"String","mode":"string","value":"{{vaInputs.user_gpt_prompt}}"}],"is_list_data_entry":false},{"supported_input_modes":[],"name":"max_tokens","type":"string","order":0,"required":false,"value":[{"type":"String","type":"String","mode":"string","value":"300"}],"is_list_data_entry":false},{"supported_input_modes":[],"name":"temperature","type":"string","order":0,"required":false,"value":[{"type":"String","type":"String","mode":"string","value":"0.8"}],"is_list_data_entry":false}],"outputs":[{"name":"response","order":0,"value":[],"is_list_data_entry":false,"topicVariableName":"response"},{"name":"__action_status__","order":0,"value":[],"is_list_data_entry":false,"topicVariableName":"action_status"},{"name":"__dont_treat_as_error__","order":0,"value":[],"is_list_data_entry":false,"topicVariableName":"don_t_treat_as_error"}],"metadata":{"runAs":"session_user"},"id":"503cb0ff064647ce88285245c7ffc421","goal_id":"primary","applicability":{"type":"Applicability","type":"Applicability","mode":"script","value":"true"},"sys_id":"1984304f9768e11085b7b4cfe153afc1","scope":"c3bf000f97e4e11085b7b4cfe153afea"},{"type":"TextOutputPrompt","type":"TextOutputPrompt","value":[{"type":"String","type":"String","mode":"string","value":"{{vaInputs.response}}"}],"id":"3d2e3790fce4434d93e382f0337b0bd1","name":"Display GPT response","goal_id":"primary","applicability":{"type":"Applicability","type":"Applicability","mode":"script","value":"true"},"secure":false}],"edges":[{"type":"Edge","source_node_id":"4e0f73b2ef25416e8ecad6bf758a8ffd","target_node_id":"b3ed86a8ac0247f4a5f3a5dce119fab6","id":"740fba12b0fc4aeab41e46e3d7847510"},{"type":"Edge","source_node_id":"b3ed86a8ac0247f4a5f3a5dce119fab6","target_node_id":"ca3c9ab91cbc4829aa7946ba7668c979","id":"b4256be454724a72a2143ae76ba97540"},{"type":"Edge","source_node_id":"0fff718f5956491db458535369ac4df3","target_node_id":"de94c6bdea574295a2a682d2f612dc3d","id":"03642bcdc98441f49e831ff5c8d512a3"},{"type":"Edge","source_node_id":"ca3c9ab91cbc4829aa7946ba7668c979","target_node_id":"6a55e009acff49c79cf88811d42810df","id":"a2285d0ee0d64e3ba8f0bf780a6961b4"},{"type":"Edge","source_node_id":"6a55e009acff49c79cf88811d42810df","target_node_id":"503cb0ff064647ce88285245c7ffc421","id":"47f299e364044f1186a5948d6396feb2"},{"type":"Edge","source_node_id":"503cb0ff064647ce88285245c7ffc421","target_node_id":"3d2e3790fce4434d93e382f0337b0bd1","id":"fe016ada96c7423887ee3f3b90ba553f"},{"type":"Edge","source_node_id":"3d2e3790fce4434d93e382f0337b0bd1","target_node_id":"0fff718f5956491db458535369ac4df3","id":"11bfb97129a64364b2038efae77d20b1"}],"id":"primary"}],"script_variables":[{"type":"VariableDto","type":"String","name":"greeting_message","value":{"type":"String","type":"String","mode":"string"},"list":false,"id":"93fc3ba547aa4b18b578b325fa90e9c7","formatType":"text","secure":false,"sensitive":false}],"glide_variables":[{"type":"Reference","type":"Reference","table":"sys_user","id":"0b322a3adb954a9f8c7f23ab1fc36073","name":"user","formatType":"text","secure":false,"sensitive":false,"list":false},{"type":"VariableDto","type":"String","name":"user_gpt_prompt","list":false,"id":"7315313469c64ecc97d9f0c012fa7d7c","formatType":"Text","validationScript":"","secure":false,"sensitive":false},{"type":"VariableDto","type":"String","name":"response","list":false,"id":"0d92c8b3401f400dba520ffae21776b0","formatType":"text","metadata":{"libraryMappingType":"output"},"secure":false,"sensitive":false},{"type":"VariableDto","type":"String","name":"action_status","list":false,"id":"0f0c1add44c84931a148b9ba3c4a03f3","formatType":"text","metadata":{"libraryMappingType":"output"},"secure":false,"sensitive":false},{"type":"True/False","type":"True/False","id":"bab036d1e60b49b1b22d1be889d4da3a","name":"don_t_treat_as_error","formatType":"text","metadata":{"libraryMappingType":"output"},"secure":false,"sensitive":false,"list":false}],"applicability":{"type":"Applicability","type":"Applicability","mode":"script","value":"true"},"roles":["public"],"scope":"c3bf000f97e4e11085b7b4cfe153afea","domain":"global","topic_type":"SMALL_TALK","channels":[],"id":"fe33d88f97e4e11085b7b4cfe153af7a","name":"_PRVW__ba95780fd068e110735ff84bf280e390","key_phrases":["GPT Demo","GPT Greeting and Query","Greetings"],"nlu_provider":"","nlu_model":"","nlu_model_label":"","nlu_intent":"","nlu_intent_label":"","flexible_conversation_switching":true,"autopilot_topic":false,"design_categories":[],"triggerable_by_notification":false,"library":false,"readOnly":false,"nluMapping":"[]"}</design_definition>
+        <design_topic_id>fe33d88f97e4e11085b7b4cfe153af7a</design_topic_id>
+        <graph>{
+  "graph_api_version": "1.0.41",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "4e0f73b2ef25416e8ecad6bf758a8ffd": {
+          "id": "4e0f73b2ef25416e8ecad6bf758a8ffd",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": "",
+            "mode": "simple"
+          }
+        },
+        "de94c6bdea574295a2a682d2f612dc3d": {
+          "id": "de94c6bdea574295a2a682d2f612dc3d",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "ca3c9ab91cbc4829aa7946ba7668c979": {
+          "id": "ca3c9ab91cbc4829aa7946ba7668c979",
+          "stepType": "TextOutput",
+          "name": "Show Greeting Message",
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaVars.greeting_message}}",
+                        "displayValue": "vaVars➛greeting_message"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            }
+          ],
+          "applicability": {
+            "mode": "script",
+            "value": ""
+          },
+          "secure": false
+        },
+        "b3ed86a8ac0247f4a5f3a5dce119fab6": {
+          "id": "b3ed86a8ac0247f4a5f3a5dce119fab6",
+          "name": "Get Greeting Message",
+          "script": "(function execute() {\n    vaVars.greeting_message = vaSystem.getGreetingMessage();\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "mode": "script",
+            "value": ""
+          }
+        },
+        "0fff718f5956491db458535369ac4df3": {
+          "id": "0fff718f5956491db458535369ac4df3",
+          "name": "Send Topic Picker",
+          "script": "(function execute() {\n    var greetingMessage = vaSystem.getTopicSelectionMessage();\n    vaSystem.sendTopicPickerControl(greetingMessage);\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "mode": "query",
+            "value": ""
+          }
+        },
+        "6a55e009acff49c79cf88811d42810df": {
+          "id": "6a55e009acff49c79cf88811d42810df",
+          "stepType": "Prompt",
+          "name": "User GPT Prompt",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Can you describe your need?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "7315313469c64ecc97d9f0c012fa7d7c",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "503cb0ff064647ce88285245c7ffc421": {
+          "id": "503cb0ff064647ce88285245c7ffc421",
+          "name": "GPT API Call",
+          "invocationType": "action",
+          "stepType": "FlowAction",
+          "actionSpoke": "c3bf000f97e4e11085b7b4cfe153afea",
+          "actionSpokeAction": "1984304f9768e11085b7b4cfe153afc1",
+          "actionWaitType": "sync",
+          "actionRunAs": "session_user",
+          "permissionsNote": "By default, the Action executes based on the permissions of the user who initiated the conversation. For elevated privileges, you can set to System User.",
+          "actionSecureField": false,
+          "actionSelectSecureField": "",
+          "actionPromptSecureField": {
+            "mode": "simple",
+            "value": ""
+          },
+          "actionConfirmPromptSecureField": {
+            "mode": "simple",
+            "value": ""
+          },
+          "actionNonSecureChannelMessage": {
+            "mode": "simple",
+            "value": ""
+          },
+          "actionInputs": {
+            "input-prompt": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.user_gpt_prompt}}",
+                        "displayValue": "Input Variables➛GPT Prompt"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "string"
+            },
+            "input-max_tokens": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "300"
+                    }
+                  ]
+                }
+              ],
+              "mode": "string"
+            },
+            "input-temperature": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "0.8"
+                    }
+                  ]
+                }
+              ],
+              "mode": "string"
+            }
+          },
+          "actionOutputs": {
+            "output-response": [
+              {
+                "id": "0d92c8b3401f400dba520ffae21776b0",
+                "mapping": "Response",
+                "disabled": false,
+                "type": "string",
+                "value": "Response",
+                "is_list_data_entry": false,
+                "variable": "Response"
+              }
+            ],
+            "output-__action_status__": [
+              {
+                "id": "0f0c1add44c84931a148b9ba3c4a03f3",
+                "mapping": "Action Status",
+                "disabled": false,
+                "type": "object",
+                "value": "Action Status",
+                "is_list_data_entry": false,
+                "variable": "Action Status"
+              }
+            ],
+            "output-__dont_treat_as_error__": [
+              {
+                "id": "bab036d1e60b49b1b22d1be889d4da3a",
+                "mapping": "Don't Treat as Error",
+                "disabled": false,
+                "type": "boolean",
+                "value": "Don't Treat as Error",
+                "is_list_data_entry": false,
+                "variable": "Don't Treat As Error"
+              }
+            ]
+          },
+          "actionDefinition": {
+            "id": "1984304f9768e11085b7b4cfe153afc1",
+            "latest_snapshot_id": "1984304f9768e11085b7b4cfe153afc1",
+            "type": "action",
+            "name": "gpt_davinci3",
+            "label": "GPT_DaVinci3",
+            "scope_id": "c3bf000f97e4e11085b7b4cfe153afea",
+            "description": "Query DaVinci-003 language model with provided prompt",
+            "category": "",
+            "parameters_have_loaded": true,
+            "input_parameters": [
+              {
+                "supported_input_modes": [
+                  "script",
+                  "data_pill",
+                  "data_entry"
+                ],
+                "name": "prompt",
+                "label": "Prompt",
+                "type": "string",
+                "order": 1,
+                "required": false,
+                "value": [],
+                "is_list_data_entry": false
+              },
+              {
+                "supported_input_modes": [
+                  "script",
+                  "data_pill",
+                  "data_entry"
+                ],
+                "name": "max_tokens",
+                "label": "Max Tokens",
+                "type": "string",
+                "order": 2,
+                "required": false,
+                "value": [],
+                "is_list_data_entry": false
+              },
+              {
+                "supported_input_modes": [
+                  "script",
+                  "data_pill",
+                  "data_entry"
+                ],
+                "name": "temperature",
+                "label": "Temperature",
+                "type": "string",
+                "order": 3,
+                "required": false,
+                "value": [],
+                "is_list_data_entry": false
+              }
+            ],
+            "output_parameters": [
+              {
+                "name": "response",
+                "label": "Response",
+                "type": "string",
+                "order": 1,
+                "required": false,
+                "value": [],
+                "is_list_data_entry": false
+              },
+              {
+                "name": "__action_status__",
+                "label": "Action Status",
+                "type": "object",
+                "order": 2,
+                "required": false,
+                "value": [],
+                "is_list_data_entry": false
+              },
+              {
+                "name": "__dont_treat_as_error__",
+                "label": "Don't Treat as Error",
+                "type": "boolean",
+                "order": 3,
+                "required": false,
+                "value": [],
+                "is_list_data_entry": false
+              }
+            ]
+          },
+          "subflowSecureField": false,
+          "subflowSelectSecureField": "",
+          "subflowPromptSecureField": {
+            "mode": "simple",
+            "value": ""
+          },
+          "subflowConfirmPromptSecureField": {
+            "mode": "simple",
+            "value": ""
+          },
+          "subflowNonSecureChannelMessage": {
+            "mode": "simple",
+            "value": "This action is not supported on this channel."
+          },
+          "variableIds": [
+            "0d92c8b3401f400dba520ffae21776b0",
+            "0f0c1add44c84931a148b9ba3c4a03f3",
+            "bab036d1e60b49b1b22d1be889d4da3a"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "3d2e3790fce4434d93e382f0337b0bd1": {
+          "id": "3d2e3790fce4434d93e382f0337b0bd1",
+          "stepType": "TextOutput",
+          "name": "Display GPT response",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.response}}",
+                        "displayValue": "Input Variables➛Response"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "03b28d20767545d7a214d9e95f1f4fd4"
+            }
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "740fba12b0fc4aeab41e46e3d7847510",
+          "edgeType": "Edge",
+          "source": "4e0f73b2ef25416e8ecad6bf758a8ffd",
+          "target": "b3ed86a8ac0247f4a5f3a5dce119fab6",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b4256be454724a72a2143ae76ba97540",
+          "edgeType": "Edge",
+          "source": "b3ed86a8ac0247f4a5f3a5dce119fab6",
+          "target": "ca3c9ab91cbc4829aa7946ba7668c979",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "03642bcdc98441f49e831ff5c8d512a3",
+          "edgeType": "Edge",
+          "source": "0fff718f5956491db458535369ac4df3",
+          "target": "de94c6bdea574295a2a682d2f612dc3d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "a2285d0ee0d64e3ba8f0bf780a6961b4",
+          "edgeType": "Edge",
+          "source": "ca3c9ab91cbc4829aa7946ba7668c979",
+          "target": "6a55e009acff49c79cf88811d42810df",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "47f299e364044f1186a5948d6396feb2",
+          "edgeType": "Edge",
+          "source": "6a55e009acff49c79cf88811d42810df",
+          "target": "503cb0ff064647ce88285245c7ffc421",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "fe016ada96c7423887ee3f3b90ba553f",
+          "edgeType": "Edge",
+          "source": "503cb0ff064647ce88285245c7ffc421",
+          "target": "3d2e3790fce4434d93e382f0337b0bd1",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "11bfb97129a64364b2038efae77d20b1",
+          "edgeType": "Edge",
+          "source": "3d2e3790fce4434d93e382f0337b0bd1",
+          "target": "0fff718f5956491db458535369ac4df3",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "93fc3ba547aa4b18b578b325fa90e9c7": {
+      "id": "93fc3ba547aa4b18b578b325fa90e9c7",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "name": "greeting_message",
+      "label": "greeting_message",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "0b322a3adb954a9f8c7f23ab1fc36073": {
+      "category": "vaInputs",
+      "id": "0b322a3adb954a9f8c7f23ab1fc36073",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "7315313469c64ecc97d9f0c012fa7d7c": {
+      "id": "7315313469c64ecc97d9f0c012fa7d7c",
+      "name": "user_gpt_prompt",
+      "label": "User GPT Prompt",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTY3NDc2MzczNjAxOCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "0d92c8b3401f400dba520ffae21776b0": {
+      "id": "0d92c8b3401f400dba520ffae21776b0",
+      "name": "response",
+      "label": "Response",
+      "defaultValue": "Response",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "output"
+      },
+      "is_list_data_entry": false
+    },
+    "0f0c1add44c84931a148b9ba3c4a03f3": {
+      "id": "0f0c1add44c84931a148b9ba3c4a03f3",
+      "name": "action_status",
+      "label": "Action Status",
+      "defaultValue": "Action Status",
+      "varType": "object",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "output"
+      },
+      "is_list_data_entry": false
+    },
+    "bab036d1e60b49b1b22d1be889d4da3a": {
+      "id": "bab036d1e60b49b1b22d1be889d4da3a",
+      "name": "don_t_treat_as_error",
+      "label": "Don't Treat As Error",
+      "defaultValue": "Don't Treat as Error",
+      "varType": "boolean",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "output"
+      },
+      "is_list_data_entry": false
+    }
+  }
+}</graph>
+        <name>_PRVW__ba95780fd068e110735ff84bf280e390</name>
+        <sys_class_name>sys_cb_design_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-26 20:12:46</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>0f95308f9768e11085b7b4cfe153afd0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FlowTopic</sys_name>
+        <sys_package display_value="GPT Demo" source="x_snc_gpt_demo">c3bf000f97e4e11085b7b4cfe153afea</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="GPT Demo">c3bf000f97e4e11085b7b4cfe153afea</sys_scope>
+        <sys_update_name>sys_cb_design_topic_0f95308f9768e11085b7b4cfe153afd0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-01-26 20:12:46</sys_updated_on>
+        <type>FlowTopic</type>
+    </sys_cb_design_topic>
+</record_update>
